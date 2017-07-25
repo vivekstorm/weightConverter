@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WeightConvertor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <style>
+  body{
+    margin-top: 70px;
+    background: #333;
+    color: :#fff;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="display-4 text-center mb-3">Weight Converter</h1>
+      <form >
+        <div class="form-group">
+          <input id="ip"type="number" class="form-control form-contorl-lg" name="" placeholder="Enter pounds">
+        </div>
+      </form>
+      <div id="op">
+        <div class="card card-danger mb-2">
+          <div class="card-block">
+            <h4>Grams:</h4>
+            <div id="gramsop">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-primary mb-2">
+          <div class="card-block">
+            <h4>KiloGrams:</h4>
+            <div id="kgop">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-sucess mb-2">
+          <div class="card-block">
+            <h4>Ounces:</h4>
+            <div id="ouop">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('op').style.visibility='hidden';
+document.getElementById('ip').addEventListener('input',
+function(e){
+  document.getElementById('op').style.visibility='visible';
+  let pounds= e.target.value;
+  document.getElementById('gramsop').innerHTML=(pounds/0.0022046).toFixed(2);
+  document.getElementById('kgop').innerHTML=(pounds/2.2046).toFixed(2);
+  document.getElementById('ouop').innerHTML=pounds*16;
+});
+
+</script>
+</body>
+</html>
